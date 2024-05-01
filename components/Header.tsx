@@ -96,7 +96,7 @@ export const Header = () => {
                   className="border border-blue-500 text-blue-500 rounded-md px-4 py-2 hover:bg-blue-500 hover:text-white hover:border-transparent transition-colors duration-300 px-2"
                   onClick={logout}
                 >
-                  Sign Out/Signin
+                  SignIn/SignOut
                 </Link>
               </div>
             </div>
