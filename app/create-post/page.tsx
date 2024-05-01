@@ -5,7 +5,6 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 export default function Page() {
-  
   const [task, setTask] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
@@ -24,8 +23,8 @@ export default function Page() {
   };
 
   return (
-    <div className="flex flex-col gap-3 p-16 justify-between items-center w-full sm:w-[500px] mx-auto">
-      <div>
+    <div className="">
+      <div className="flex flex-col gap-3 p-16 justify-between items-center w-full border rounded border-blue-200 sm:w-[500px] mx-auto">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label
@@ -55,13 +54,14 @@ export default function Page() {
             {isSubmitting ? "Submitting..." : "Create Post"}
           </button>
         </form>
-      </div>
-      <Link
+        <Link
         href="/all"
         className="border border-blue-500 text-blue-500 rounded-md px-4 py-2 hover:bg-blue-500 hover:text-white hover:border-transparent transition-colors duration-300"
       >
         Go To All Posts
       </Link>
+      </div>
+     
     </div>
   );
 }
