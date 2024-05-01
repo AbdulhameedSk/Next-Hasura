@@ -2,7 +2,6 @@
 import { signOut } from "next-auth/react";
 import router, { useRouter } from "next/router";
 import Link from "next/link";
-
 import { ImUser } from "react-icons/im";
 
 export async function logout() {

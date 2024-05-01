@@ -9,7 +9,7 @@ interface Post {
 
 const PostCard = ({ post }: { post: Post }) => {
   return (
-    <div className="max-w-sm h-fit	  rounded overflow-hidden shadow-lg  m-4">
+    <div className="max-w-sm w-2/3 h-96 rounded overflow-hidden shadow-lg overflow-y-scroll m-4 scrollbar scrollbar-track-white ">
       <img
         src="https://cdn.imagecomics.com/assets/i/series/1034550/DrawingBlood01secondptg_cover_147581a7be02116581a0f653533a26b1.jpg"
         alt="TEST IMG"
