@@ -5,7 +5,7 @@ async function Content(){
   const posts =await allTodo();
   return (
 
-    <div className="flex">
+    <div className="grid grid-cols-3 ">
       {Array.isArray(posts) &&
         posts.map((post) => <PostCard key={post.id} post={post} />)}
     </div>
