@@ -86,7 +86,7 @@ export const Header = () => {
                   All-Posts
                 </Link>
                 <Link
-                  href="/create-todos"
+                  href="/create-post"
                   className="border border-blue-500 text-blue-500 rounded-md px-4 py-2 hover:bg-blue-500 hover:text-white hover:border-transparent transition-colors duration-300"
                 >
                   Create-post

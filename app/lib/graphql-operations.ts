@@ -24,8 +24,8 @@ export const CREATE_USER_MUTATION = gql`
 `;
 
 export const CREATE_POST = gql`
-  mutation CreateTodo($task: String!, $authorId: Int!) {
-    insert_todo_one(object: { task: $task, authorId: $authorId }) {
+  mutation CreateTodo($task: String!) {
+    insert_todo_one(object: { task: $task }) {
       id
     }
   }

@@ -1,7 +1,7 @@
 import { allTodo } from "@/app/lib/actions/all";
 import PostCard from "@/components/PostCard";
 
-export async function Content(){
+async function Content(){
   const posts =await allTodo();
   return (
 
