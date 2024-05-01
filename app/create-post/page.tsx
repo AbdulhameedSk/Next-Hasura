@@ -2,8 +2,10 @@
 import { createPost } from "@/app/lib/actions/createPost";
 import React, { useState } from "react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default function Page() {
+  
   const [task, setTask] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
@@ -13,6 +15,7 @@ export default function Page() {
 
     try {
       await createPost(task);
+      redirect("/all");
     } catch (error) {
       console.error(error);
     } finally {
@@ -21,7 +24,7 @@ export default function Page() {
   };
 
   return (
-    <div className="flex flex-col gap-3 p-16 justify-between items-center w-[500px] mx-8">
+    <div className="flex flex-col gap-3 p-16 justify-between items-center w-full sm:w-[500px] mx-auto">
       <div>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
@@ -36,7 +39,7 @@ export default function Page() {
               value={task}
               onChange={(e) => setTask(e.target.value)}
               rows={2}
-              className="m-1 p-2 block w-full rounded-md border-gray-300 shadow-sm border-2 focus:ring-blue-500 focus:border-black"
+              className="m-1 p-2 block w-full rounded-md border-gray-300 shadow-sm border-2 focus:ring-blue-500 focus:border-blue-500"
               required
             ></textarea>
           </div>
@@ -46,7 +49,7 @@ export default function Page() {
             className={`w-full inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-md font-medium rounded-md text-white ${
               isSubmitting
                 ? "bg-blue-300 hover:bg-blue-300"
-                : "bg-slate-600 hover:bg-slate-700"
+                : "bg-blue-600 hover:bg-blue-700"
             } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out`}
           >
             {isSubmitting ? "Submitting..." : "Create Post"}
